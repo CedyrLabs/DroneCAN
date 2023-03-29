@@ -28,7 +28,7 @@ sudo pip3 install git+https://github.com/DroneCAN/gui_tool@master
 ```
 ^^ Tested working on Ubuntu Parallels ARM64 29/03/23 SW
 
-
+```
 ### DroneCAN GUI tool MacOS instructions (FAILED ON M1 IGNORE)
 1. Download and install homebrew from https://brew.sh 
 2. Execute the following commands:
@@ -38,4 +38,5 @@ sudo pip3 install git+https://github.com/DroneCAN/gui_tool@master
     arch -arm64 brew install pyqt@5
     arch -arm64 pip3 install git+https://github.com/DroneCAN/gui_tool@master
     dronecan_gui_tool
+```
 ```
