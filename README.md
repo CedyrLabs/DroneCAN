@@ -5,9 +5,17 @@
 - Downloading and testing DroneCAN GUI tool 
 - Setting up Github repositories
 - Researching best ways to get started developing DroneCAN for STM32
+- Joined Discord
+
+## Where does DroneCAN fit within the serial protcol space
+![serial-history](/images/serial-history.png "Serial Protocol History")
+*Credit https://zubax.com/technologies/cyphal*
 
 ## DroneCAN tutorials
 https://dronecan.github.io/Implementations/Libuavcan/Tutorials/ 
+
+## Main DroneCAN library 
+https://github.com/dronecan/libcanard 
 
 ## DroneCAN GUI tool
 https://github.com/DroneCAN/gui_tool 
