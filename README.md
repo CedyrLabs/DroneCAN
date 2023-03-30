@@ -6,6 +6,7 @@
 - Setting up Github repositories
 - Researching best ways to get started developing DroneCAN for STM32
 - Joined DroneCAN Discord
+
 **30/03/23**
 - Researching DroneCAN documentation
 - Writing introduction README
@@ -42,7 +43,7 @@ https://dronecan.github.io/Implementations/Libuavcan/Tutorials/
 https://github.com/dronecan/libcanard 
 
 ### Official DroneCAN Python library (pyuavcan)
-
+https://github.com/dronecan/pydronecan 
 
 ## DroneCAN GUI tool
 
