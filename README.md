@@ -20,12 +20,12 @@ peer network aimed at UAV's, robotics and space applications. The standard has p
 
 
 ## Where does DroneCAN fit within the serial protcol space
-DroneCAN is a continuation from a previous project, known as UAVCAN. It currently competes with other establihed industial communication protocol standards such as [MODBUS](https://modbus.org) and robotics protocols such as [ROS](https://www.ros.org).
+DroneCAN is a continuation from a previous project, known as UAVCAN (which was also forked into a competing project known as [Cyphal](https://opencyphal.org) see below). Along with Cyphal, DroneCAN competes with other established industial communication protocol standards such as [MODBUS](https://modbus.org) and robotics protocols such as [ROS](https://www.ros.org).
 
 ![serial-history](/images/serial-history.png "Serial Protocol History")
 *Credit https://zubax.com/technologies/cyphal*
 
-Note that the UAVCAN project was also forked into another competing UAV messaging standard known as [Cyphal](https://opencyphal.org). Cypyhal is also supported by the [PX4](https://px4.io) autopilot hardware) and includes more robust messaging features that are more suited to complex projects when compared to DroneCAN. Cyphal's architecture is more closely aligned to the [Decentralied Publish Subscribe Standard (DCPS)](https://opendds.org/documents/architecture.html).
+Cypyhal is similar to DroneCAN, and is also supported by the [PX4](https://px4.io) autopilot hardware) but includes more robust messaging features that are more suited to complex projects. Cyphal's architecture is more closely aligned to the [Decentralied Publish Subscribe Standard (DCPS)](https://opendds.org/documents/architecture.html).
 For more information on the differences between DroneCAN and Cyphal, [see here](https://forum.opencyphal.org/t/cyphal-vs-dronecan/1814).
 
 ## DroneCAN transport technologies
