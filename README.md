@@ -14,9 +14,11 @@
 
 
 # What is DroneCAN?
-DroneCAN (previously known as UAVCAN) is a modern, light-weight, decentralised peer network aimed at UAV's, robotics and space applications. https://github.com/dronecan  
+[DroneCAN](https://dronecan.github.io) (previously known as UAVCAN) is a modern, light-weight, decentralised peer network aimed at UAV's, robotics and space applications. The standard has popular commercial support from leading UAV flight controller projects such as [Ardupilot](https://ardupilot.org) and [PX4](https://px4.io). 
+
 
 ## Where does DroneCAN fit within the serial protcol space
+DroneCAN is a continuation from a previous project, known as UAVCAN. This project was also forked into another competing UAV messaging standard known as Cyphal https://opencyphal.org 
 ![serial-history](/images/serial-history.png "Serial Protocol History")
 *Credit https://zubax.com/technologies/cyphal*
 
@@ -35,10 +37,12 @@ DroneCAN nodes supports 2 types of communication:
 
 
 # DroneCAN Official support
+**DroneCAN official Github repository** https://github.com/dronecan  
 ## DroneCAN tutorials
 https://dronecan.github.io/Implementations/Libuavcan/Tutorials/  
 
-## Official software libraries
+## Official software libraries 
+
 ### Official DroneCAN C library (libcanard)
 https://github.com/dronecan/libcanard 
 
