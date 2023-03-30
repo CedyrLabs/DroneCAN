@@ -8,12 +8,8 @@
 - Joined Discord
 
 
-
-## DroneCAN tutorials
-https://dronecan.github.io/Implementations/Libuavcan/Tutorials/ 
-
 # What is DroneCAN?
-DroneCAN (previously known as UAVCAN) is a modern, light-weight, decentralised peer network aimed at UAV's, robotics and space applications.
+DroneCAN (previously known as UAVCAN) is a modern, light-weight, decentralised peer network aimed at UAV's, robotics and space applications. https://github.com/dronecan  
 
 ## Where does DroneCAN fit within the serial protcol space
 ![serial-history](/images/serial-history.png "Serial Protocol History")
@@ -33,10 +29,19 @@ DroneCAN nodes supports 2 types of communication:
 
 
 
-## Main DroneCAN C library 
+# DroneCAN support
+## ## DroneCAN tutorials
+https://dronecan.github.io/Implementations/Libuavcan/Tutorials/  
+
+## Official software libraries
+### Official DroneCAN C library (libcanard)
 https://github.com/dronecan/libcanard 
 
+### Official DroneCAN Python library (pyuavcan)
+
+
 ## DroneCAN GUI tool
+
 https://github.com/DroneCAN/gui_tool 
 
 ### DroneCAN GUI tool Ubuntu instructions
