@@ -18,9 +18,14 @@
 
 
 ## Where does DroneCAN fit within the serial protcol space
-DroneCAN is a continuation from a previous project, known as UAVCAN. This project was also forked into another competing UAV messaging standard known as Cyphal https://opencyphal.org 
+DroneCAN is a continuation from a previous project, known as UAVCAN. 
+
+For more information on the differences between DroneCAN and Cyphal, [see here](https://forum.opencyphal.org/t/cyphal-vs-dronecan/1814).
+
 ![serial-history](/images/serial-history.png "Serial Protocol History")
 *Credit https://zubax.com/technologies/cyphal*
+
+Note that the UAVCAN project was also forked into another competing UAV messaging standard known as [Cyphal](https://opencyphal.org). Cypyhal is also supported by the [PX4](https://px4.io) autopilot hardware) and includes more robust messaging features that are more suited to complex projects when compared to DroneCAN. Cyphal's architecture is more closely aligned to the [Decentralied Publish Subscribe Standard (DCPS)](https://opendds.org/documents/architecture.html)
 
 ## DroneCAN transport technologies
 DroneCAN supports various transport interface including CAN, Ethernet, Serial... 
