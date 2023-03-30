@@ -34,8 +34,8 @@ DroneCAN nodes supports 2 types of communication:
 
 
 
-# DroneCAN support
-## ## DroneCAN tutorials
+# DroneCAN Official support
+## DroneCAN tutorials
 https://dronecan.github.io/Implementations/Libuavcan/Tutorials/  
 
 ## Official software libraries
