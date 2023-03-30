@@ -28,8 +28,8 @@ on the network through a publish/subscribe architecture. Each peer has a unique 
 
 ### DroneCAN types of communication
 DroneCAN nodes supports 2 types of communication:
-- Message broadcasting - The primary method of data exchange with publish/subscribe semantics.
-- Service invocation - The communication method for peer-to-peer request/response interactions.
+- *Message broadcasting* - The primary method of data exchange with publish/subscribe semantics.
+- *Service invocation* - The communication method for peer-to-peer request/response interactions.
 
 
 
