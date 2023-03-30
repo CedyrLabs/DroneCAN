@@ -7,14 +7,33 @@
 - Researching best ways to get started developing DroneCAN for STM32
 - Joined Discord
 
-## Where does DroneCAN fit within the serial protcol space
-![serial-history](/images/serial-history.png "Serial Protocol History")
-*Credit https://zubax.com/technologies/cyphal*
+
 
 ## DroneCAN tutorials
 https://dronecan.github.io/Implementations/Libuavcan/Tutorials/ 
 
-## Main DroneCAN library 
+# What is DroneCAN?
+DroneCAN (previously known as UAVCAN) is a modern, light-weight, decentralised peer network aimed at UAV's, robotics and space applications.
+
+## Where does DroneCAN fit within the serial protcol space
+![serial-history](/images/serial-history.png "Serial Protocol History")
+*Credit https://zubax.com/technologies/cyphal*
+
+## DroneCAN transport technologies
+DroneCAN supports various transport interface including CAN, Ethernet, Serial... 
+
+## DroneCAN network structure
+DroneCAN is a decrentralised peer network where each peer (node) can speak with every other peer
+on the network through a publish/subscribe architecture. Each peer has a unique numeric ID (known as the peer ID).
+
+### DroneCAN types of communication
+DroneCAN nodes supports 2 types of communication:
+- Message broadcasting - The primary method of data exchange with publish/subscribe semantics.
+- Service invocation - The communication method for peer-to-peer request/response interactions.
+
+
+
+## Main DroneCAN C library 
 https://github.com/dronecan/libcanard 
 
 ## DroneCAN GUI tool
