@@ -14,24 +14,22 @@
 
 
 # What is DroneCAN?
-[DroneCAN](https://dronecan.github.io) (previously known as UAVCAN) is a modern, light-weight, decentralised protocol 
-
-peer network aimed at UAV's, robotics and space applications. The standard has popular commercial support from leading UAV flight controller projects such as [Ardupilot](https://ardupilot.org) and [PX4](https://px4.io). 
+[DroneCAN](https://dronecan.github.io) (previously known as UAVCAN) is a modern, light-weight, decentralised protocol aimed at UAV's, robotics and space applications. The standard primarily communicate via CAN bus and has popular commercial support from leading UAV flight controller projects such as [Ardupilot](https://ardupilot.org) and [PX4](https://px4.io). 
 
 
 ## Where does DroneCAN fit within the serial protcol space
-DroneCAN is a continuation from a previous project, known as UAVCAN (which was also forked into a competing project known as [Cyphal](https://opencyphal.org) see below). Along with Cyphal, DroneCAN competes with other established industial communication protocol standards such as [MODBUS](https://modbus.org) and robotics protocols such as [ROS](https://www.ros.org).
+DroneCAN is a continuation of the previously known UAVCAN project (UAVCAN was also forked and extended into a competing protocol known as [Cyphal](https://opencyphal.org) - *see below*). In industrial application DroneCAN competes with other established communication protocols such as [MODBUS](https://modbus.org), and for robotics applications it competes with [ROS](https://www.ros.org).
 
 ![serial-history](/images/serial-history.png "Serial Protocol History")
 *Credit https://zubax.com/technologies/cyphal*
 
-Cypyhal is similar to DroneCAN, and is also supported by the [PX4](https://px4.io) autopilot hardware) but includes more robust messaging features that are more suited to complex projects. Cyphal's architecture is more closely aligned to the [Decentralied Publish Subscribe Standard (DCPS)](https://opendds.org/documents/architecture.html).
+Cypyhal has many similarities to DroneCAN, and is also supported by the [PX4](https://px4.io) autopilot hardware), but includes more robust messaging features that are more suited to complex projects and more closely align to the [Decentralied Publish Subscribe Standard (DCPS)](https://opendds.org/documents/architecture.html). Cyphal also supports more message transport mecahnisms beyond CAN, such as TCP and UDP. 
 For more information on the differences between DroneCAN and Cyphal, [see here](https://forum.opencyphal.org/t/cyphal-vs-dronecan/1814).
 
 ## DroneCAN transport technologies
-DroneCAN supports various transport interface including CAN, Ethernet, Serial... 
+DroneCAN is primarily CAN based, but it can be used succesfully with other transports including Ethernet and Serial. 
 
-## DroneCAN network structure
+## DroneCAN Network Architecture
 DroneCAN is a decrentralised peer network where each peer (node) can speak with every other peer
 on the network through a publish/subscribe architecture. Each peer has a unique numeric ID (known as the peer ID).
 
