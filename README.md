@@ -1,11 +1,15 @@
 # DroneCAN
 
 ### Sam Log
-29/03/23
+*29/03/23*
 - Downloading and testing DroneCAN GUI tool 
 - Setting up Github repositories
 - Researching best ways to get started developing DroneCAN for STM32
-- Joined Discord
+- Joined DroneCAN Discord
+*30/03/23*
+- Researching DroneCAN documentation
+- Writing introduction README
+
 
 
 # What is DroneCAN?
