@@ -148,9 +148,27 @@ For more information see [here](https://dronecan.github.io/Specification/2._Basi
 ## Data Structure Description language (DSDL)
 As mentioned above the DSDL generates the serialisation and deserialisation code for a given programming language. The tool that generates source code from DSDL definition files is called the DSDL compiler.
 
+The DroneCAN DSDL (Data Structure Description Language) is a language used to define data structures for exchanging data via the CAN bus. DSDL definitions are utilized to generate message serialization and deserialization code for specific programming languages automatically. The tool responsible for generating source code from DSDL definition files is known as the DSDL compiler.
+
+### Key components of DroneCAN DSDL:
+
+#### File hierarchy
+DSDL definition files specify a single data structure for message broadcasting or a pair of structures for service invocation data exchange. The namespace hierarchy corresponds directly to the file-system directory structure.
 
 
 
+- Service data structure: Since a service invocation consists of two network exchange operations, the DSDL definition for a service must define two structures: Request part and Response part.
+- Syntax: A data structure definition is comprised of attributes and directives. Attribute types include Field (modifiable variables) and Constant (immutable values). Directive types are statements that provide instructions to the DSDL compiler.
+- Attribute definition: Field definition patterns involve cast_mode, field_type, and field_name. Constant definition patterns involve cast_mode, constant_type, constant_name, and constant_initializer.
+- Cast mode: Cast mode defines the rules of conversion from the native value of a certain programming language to the serialized field value. Cast modes include saturated (default) and truncated.
+- Void type: Void type is a special field type intended for data alignment purposes.
+- Directives: Directives are single case-sensitive words starting with an "at sign" (@), followed by space-separated arguments.
+- Comments: DSDL descriptions may contain comments starting from a number sign (#) up to the end of the line.
+- Service response marker: The service response marker separates the request and response parts of a service data type definition.
+- Primitive data types: Built-in types such as bool, intX, uintX, float16, float32, float64, and voidX, where X is the number of bits (1 to 64).
+- Naming rules: There are mandatory naming rules that must be followed, as well as optional and advisory rules that are recommended.
+- Data type compatibility: To ensure type compatibility, the concept of a data type signature is introduced, which is based on the CRC-64-WE hash function.
+Overall, the DroneCAN DSDL is a powerful tool for defining data structures and ensuring compatibility in distributed systems that communicate via the CAN bus. It allows for efficient and robust data exchange between different nodes in the system.
 
 
 # DroneCAN Official support
