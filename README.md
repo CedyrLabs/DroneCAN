@@ -88,18 +88,41 @@ classDiagram
     }
 ```
 
-
 ### DroneCAN types of communication
 DroneCAN nodes supports 2 types of communication:
 - **Message broadcasting** - The primary method of data exchange with publish/subscribe semantics.
 - **Service invocation** - The communication method for peer-to-peer request/response interactions.
 
 ### DroneCAN Data Structure Description Language (DSDL)
-Each type of communication has its own types of pre-defined data structures, each with their own "Data Type ID" or (DTID). The standard includes its own DTID's which are suggested for most use cases, but custom types can be produced by each vendor. 
+Each communication method has its own types of pre-defined data structures, each with their own "Data Type ID" or (DTID). The standard includes its own DTID's which are suggested for most use cases, but custom types can be produced by each vendor. The message and service data structures are defined by the [The Data Structure Description Language (DSDL)](https://dronecan.github.io/Specification/3._Data_structure_description_language). The DSDL  generates the message serialisation and deserialisation code optimised for each target platform and programming language (e.g., C or Python).
 
+The DSDL also includes various standard high-level functions such as firmware update, time synchonisation, network discovery and node health monitoring ([for more information see here](https://dronecan.github.io/Specification/6._Application_level_functions/)).
 
+These serialised messages are then sent through the [CAN transport layer](https://dronecan.github.io/Specification/4._CAN_bus_transport_layer/) which automatically handles splitting larger messages into multiple frames.
 
+## Message Broadcasting 
+This is the primary communication method for DroneCAN. Messages are published (broadcasted) by each node, on a regular or ad-hoc basis and are received by relevant subscribers. Examples of message broadcasting are sending velocity commands to motors or updating temperatures from sensors. 
 
+Each broadcast message includes the following information:
+
+| Field | Content |
+| --- | --- |
+| `Payload` | The serialised data structure |
+| `Data type ID` | Numerical indicator showing how the message should be interpreted |
+| `Source node ID` | The node ID of the transmitting node |
+| `Transfer ID`|An small overflowing integer that increments each time a given message is sent by the node |
+
+### Anonymous message broadcasting
+It is also possible to send anonymous messages with no `Source node ID`. This is particularly useful if node ID's are allocated dynamically upon being initialised on the network. 
+
+## Service invocation
+Service invocation only happens between 2 nodes (a client and a server). This happens in a 2 step process:
+```mermaid
+sequenceDiagram
+    Client->>Server: Step 1 - Client sends request
+    Server->>Client: Step 2 - Client receives response from server
+    
+```
 
 
 # DroneCAN Official support
