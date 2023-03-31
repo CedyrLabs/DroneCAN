@@ -87,6 +87,11 @@ classDiagram
         Node ID
     }
 ```
+Example wiring of 2 bus redunancy with all notes attached to both busses is shown below.
+![2 bus redundancy](/images/redunancy1.png "2 bus redundancy")
+
+In this example only mission critical nodes are attached to the backup bus. (Note that they are still connected to the main bus).
+![mission critical redundancy](/images/redundancy2.png "2 bus redundancy but only mission critical nodes attached")
 
 ### DroneCAN types of communication
 DroneCAN nodes supports 2 types of communication:
@@ -138,7 +143,9 @@ Both request and response contain exactly the same values for all fields except 
 For more information see [here](https://dronecan.github.io/Specification/2._Basic_concepts/).
 
 ## Data Structure Description language (DSDL)
-As mentioned above the DSDL generates the serialisation and deserialisation code for a given programming language. 
+As mentioned above the DSDL generates the serialisation and deserialisation code for a given programming language. The tool that generates source code from DSDL definition files is called the DSDL compiler.
+
+
 
 
 
