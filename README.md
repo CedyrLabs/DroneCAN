@@ -116,13 +116,27 @@ Each broadcast message includes the following information:
 It is also possible to send anonymous messages with no `Source node ID`. This is particularly useful if node ID's are allocated dynamically upon being initialised on the network. 
 
 ## Service invocation
-Service invocation only happens between 2 nodes (a client and a server). This happens in a 2 step process:
+Service invocation only happens between 2 nodes (a client and a server). This occurs in a 2 step exchange:
 ```mermaid
 sequenceDiagram
     Client->>Server: Step 1 - Client sends request
-    Server->>Client: Step 2 - Client receives response from server
-    
+    Server->>Client: Step 2 - Client receives response from server   
 ```
+Examples of service communication include firmware updating, file transfers and other ad-hoc action requests. 
+
+Each service invocation includes the following information:
+
+| Field | Content |
+| --- | --- |
+| `Payload` | The serialised data structure |
+| `Data type ID` | Numerical indicator showing how the message should be interpreted |
+| `Client node ID` | Source node ID during request transfer, destination node ID during response transfer |
+| `Server node ID` | Destination node ID during request transfer, source node ID during response transfer |
+| `Transfer ID`|An small overflowing integer that increments each time a given message is sent by the node |
+
+Both request and response contain exactly the same values for all fields except payload, where the content is application defined. Clients can match the response with a corresponding request using the following fields: data type ID, client node ID, server node ID, and transfer ID.
+For more information see [here](https://dronecan.github.io/Specification/2._Basic_concepts/).
+
 
 
 # DroneCAN Official support
