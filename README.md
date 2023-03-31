@@ -11,10 +11,13 @@
 - Researching DroneCAN documentation
 - Writing introduction README
 
+**31/03/23**
+- Continuing researching DroneCAN documentation
+- Cotinuing writing introduction README
 
 
 # What is DroneCAN?
-[DroneCAN](https://dronecan.github.io) (previously known as UAVCAN) is a modern, light-weight, decentralised protocol aimed at UAV's, robotics and space applications. The standard primarily communicate via CAN bus and has popular commercial support from leading UAV flight controller projects such as [Ardupilot](https://ardupilot.org) and [PX4](https://px4.io). 
+[DroneCAN](https://dronecan.github.io) (previously known as UAVCAN) is a modern, light-weight, decentralised protocol aimed at UAV's, robotics and space applications. The standard primarily communicate via CAN bus and has popular commercial support from leading UAV flight controller projects such as [Ardupilot](https://ardupilot.org) and [PX4](https://px4.io). DroneCAN is published under the [MIT License](http://en.wikipedia.org/wiki/MIT_License).
 
 
 ## Where does DroneCAN fit within the serial protcol space
@@ -31,7 +34,7 @@ DroneCAN is primarily CAN and CAN-FD based, but it can be used succesfully with 
 
 ## DroneCAN Network Architecture
 DroneCAN is a decentralised peer network where each peer (node) can speak with every other peer
-on the network through a publish/subscribe architecture. Each peer has a unique numeric ID (known as the peer ID).
+on the network through a publish/subscribe architecture. Each peer has a unique numeric ID (known as the node ID).
 
 ```mermaid
 classDiagram
@@ -40,26 +43,61 @@ classDiagram
     Transport <--> Node3
     Transport <--> NodeX
     class Transport{
-        e.g CANBus
+    CANBus
     }
     class Node1{
-        Peer ID
+        Node ID
     }
     class Node2{
-        Peer ID
+        Node ID
     }
     class Node3{
-        Peer ID
+        Node ID
     }
     class NodeX{
-        Peer ID
+        Node ID
     }
 ```
+
+DroneCAN operates as a **democratic network**, where each node shares equal communication rights, eliminating the dependency on a central master node. This approach distributes authority across the entire network, reducing the risk of a single point of failure and improving overall stability.
+
+DroneCAN also support the use of up to 3 redundant busses. This feature allows mission critical nodes to be connected to their own backup communication busses in case of failures on the main bus. All nodes mut be be connected to the main bus, but only the nodes that the user requires to redundany for need to be connected to the redundant bus lines. It is also possible to connect all nodes to all bus channels to have redundancy for all nodes. 
+
+```mermaid
+classDiagram
+    Transports <--> Node1
+    Transports <--> Node2
+    Transports <--> Node3
+    Transports <--> NodeX
+    class Transports{
+    CAN1 (Main bus)
+    CAN2 (Redundant bus 1)
+    CAN3 (Redundant bus 2)
+    }
+    class Node1{
+        Node ID
+    }
+    class Node2{
+        Node ID
+    }
+    class Node3{
+        Node ID
+    }
+    class NodeX{
+        Node ID
+    }
+```
+
 
 ### DroneCAN types of communication
 DroneCAN nodes supports 2 types of communication:
 - **Message broadcasting** - The primary method of data exchange with publish/subscribe semantics.
 - **Service invocation** - The communication method for peer-to-peer request/response interactions.
+
+### DroneCAN Data Structure Description Language (DSDL)
+Each type of communication has its own types of pre-defined data structures, each with their own "Data Type ID" or (DTID). The standard includes its own DTID's which are suggested for most use cases, but custom types can be produced by each vendor. 
+
+
 
 
 
