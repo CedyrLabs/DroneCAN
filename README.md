@@ -93,7 +93,7 @@ DroneCAN nodes supports 2 types of communication:
 - **Message broadcasting** - The primary method of data exchange with publish/subscribe semantics.
 - **Service invocation** - The communication method for peer-to-peer request/response interactions.
 
-### DroneCAN Data Structure Description Language (DSDL)
+### DroneCAN Data Structures
 Each communication method has its own types of pre-defined data structures, each with their own "Data Type ID" or (DTID). The standard includes its own DTID's which are suggested for most use cases, but custom types can be produced by each vendor. The message and service data structures are defined by the [The Data Structure Description Language (DSDL)](https://dronecan.github.io/Specification/3._Data_structure_description_language). The DSDL  generates the message serialisation and deserialisation code optimised for each target platform and programming language (e.g., C or Python).
 
 The DSDL also includes various standard high-level functions such as firmware update, time synchonisation, network discovery and node health monitoring ([for more information see here](https://dronecan.github.io/Specification/6._Application_level_functions/)).
@@ -136,6 +136,10 @@ Each service invocation includes the following information:
 
 Both request and response contain exactly the same values for all fields except payload, where the content is application defined. Clients can match the response with a corresponding request using the following fields: data type ID, client node ID, server node ID, and transfer ID.
 For more information see [here](https://dronecan.github.io/Specification/2._Basic_concepts/).
+
+## Data Structure Description language (DSDL)
+As mentioned above the DSDL generates the serialisation and deserialisation code for a given programming language. 
+
 
 
 
