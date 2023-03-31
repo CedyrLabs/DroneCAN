@@ -27,16 +27,25 @@ Cypyhal has many similarities to DroneCAN, and is also supported by the [PX4](ht
 For more information on the differences between DroneCAN and Cyphal, [see here](https://forum.opencyphal.org/t/cyphal-vs-dronecan/1814).
 
 ## DroneCAN transport technologies
-DroneCAN is primarily CAN based, but it can be used succesfully with other transports including Ethernet and Serial. 
+DroneCAN is primarily CAN and CAN-FD based, but it can be used succesfully with other transports including Ethernet and Serial. 
 
 ## DroneCAN Network Architecture
-DroneCAN is a decrentralised peer network where each peer (node) can speak with every other peer
+DroneCAN is a decentralised peer network where each peer (node) can speak with every other peer
 on the network through a publish/subscribe architecture. Each peer has a unique numeric ID (known as the peer ID).
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
 
 ### DroneCAN types of communication
 DroneCAN nodes supports 2 types of communication:
 - **Message broadcasting** - The primary method of data exchange with publish/subscribe semantics.
 - **Service invocation** - The communication method for peer-to-peer request/response interactions.
+
 
 
 
