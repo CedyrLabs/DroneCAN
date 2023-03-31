@@ -89,7 +89,8 @@ classDiagram
 ```
 ### Redundancy example 1
 Example wiring of 2 bus redunancy with all notes attached to both busses is shown below.
-![2 bus redundancy](/images/redunancy1.png "2 bus redundancy")
+![2 bus redundancy](/images/redunancy1.png 
+ "2 bus redundancy")
 
 ### Redundancy example 2
 In this example only mission critical nodes are attached to the backup bus. (Note that they are still connected to the main bus).
