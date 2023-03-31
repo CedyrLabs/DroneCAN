@@ -34,20 +34,6 @@ DroneCAN is a decentralised peer network where each peer (node) can speak with e
 on the network through a publish/subscribe architecture. Each peer has a unique numeric ID (known as the peer ID).
 
 ```mermaid
-graph BT;
-    nA[Peer 1]
-    nB[Peer 2]
-    nC[Peer 3]
-    nD[Peer 4]
-    c[CANBus]
-    c<-->nA;
-    c<-->nB;
-    c<-->nC;
-    c<-->nD;
-```
-
-
-```mermaid
 classDiagram
     Transport <--> Peer1
     Transport <--> Peer2
@@ -57,16 +43,16 @@ classDiagram
         e.g CANBus
     }
     class Peer1{
-        Node ID
+        Peer ID
     }
     class Peer2{
-        Node ID
+        Peer ID
     }
     class Peer3{
-        Node ID
+        Peer ID
     }
     class PeerX{
-        Node ID
+        Peer ID
     }
 ```
 
