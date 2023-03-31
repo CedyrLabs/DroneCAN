@@ -35,23 +35,23 @@ on the network through a publish/subscribe architecture. Each peer has a unique 
 
 ```mermaid
 classDiagram
-    Transport <--> Peer1
-    Transport <--> Peer2
-    Transport <--> Peer3
-    Transport <--> PeerX
+    Transport <--> Node1
+    Transport <--> Node2
+    Transport <--> Node3
+    Transport <--> NodeX
     class Transport{
         e.g CANBus
     }
-    class Peer1{
+    class Node1{
         Peer ID
     }
-    class Peer2{
+    class Node2{
         Peer ID
     }
-    class Peer3{
+    class Node3{
         Peer ID
     }
-    class PeerX{
+    class NodeX{
         Peer ID
     }
 ```
