@@ -1,20 +1,4 @@
-# DroneCAN
-
-### Sam Log
-**29/03/23**
-- Downloading and testing DroneCAN GUI tool 
-- Setting up Github repositories
-- Researching best ways to get started developing DroneCAN for STM32
-- Joined DroneCAN Discord
-
-**30/03/23**
-- Researching DroneCAN documentation
-- Writing introduction README
-
-**31/03/23**
-- Continuing researching DroneCAN documentation
-- Cotinuing writing introduction README
-
+# Cedyr DroneCAN
 
 # What is DroneCAN?
 [DroneCAN](https://dronecan.github.io) (previously known as UAVCAN) is a modern, light-weight, decentralised protocol aimed at UAV's, robotics and space applications. The standard primarily communicates via CAN bus and has popular commercial support from leading UAV flight controller projects such as [Ardupilot](https://ardupilot.org) and [PX4](https://px4.io). DroneCAN is published under the [MIT License](http://en.wikipedia.org/wiki/MIT_License).
@@ -26,11 +10,11 @@ DroneCAN is a continuation of the previously known UAVCAN project (UAVCAN was al
 ![serial-history](/images/serial-history.png "Serial Protocol History")
 *Credit https://zubax.com/technologies/cyphal*
 
-Cypyhal has many similarities to DroneCAN, and is also supported by the [PX4](https://px4.io) autopilot hardware), but it extends beyond DroneCAN's capabilities by including more robust messaging features that are more suited to complex projects, and which more closely align to the [Decentralied Publish Subscribe Standard (DCPS)](https://opendds.org/documents/architecture.html). Cyphal also supports more message transport mechanisms beyond just CAN, such as TCP and UDP. 
+Cyphal has many similarities to DroneCAN, and is also supported by the [PX4](https://px4.io) autopilot hardware), but it extends beyond DroneCAN's capabilities by including more robust messaging features that are more suited to complex projects, and which more closely align to the [Decentralised Publish Subscribe Standard (DCPS)](https://opendds.org/documents/architecture.html). Cyphal also supports more message transport mechanisms beyond just CAN, such as TCP and UDP. 
 For more information on the differences between DroneCAN and Cyphal, [see here](https://forum.opencyphal.org/t/cyphal-vs-dronecan/1814).
 
 ## DroneCAN transport technologies
-DroneCAN is primarily CAN and CAN-FD based, but it can be used succesfully with other transports including Ethernet and Serial. 
+DroneCAN is primarily CAN and CAN-FD based, but it can be used successfully with other transports including Ethernet and Serial. 
 
 ## DroneCAN Network Architecture
 DroneCAN is a decentralised peer network where each peer (node) can speak with every other peer
@@ -61,7 +45,7 @@ classDiagram
 
 DroneCAN operates as a **democratic network**, where each node shares equal communication rights, eliminating the dependency on a central master node. This approach distributes authority across the entire network, reducing the risk of a single point of failure and improving overall stability.
 
-DroneCAN also support the use of up to 3 redundant busses. This feature allows mission critical nodes to be connected to their own backup communication busses in case of failures on the main bus. **Note that all nodes must be be connected to the main bus**, but only the nodes that the user requires to redundany for need to be connected to the redundant bus lines. It is also possible to connect all nodes to all bus channels to enable redundancy for all nodes in the network. 
+DroneCAN also support the use of up to 3 redundant buses. This feature allows mission critical nodes to be connected to their own backup communication buses in case of failures on the main bus. **Note that all nodes must be be connected to the main bus**, but only the nodes that the user requires to redundancy for need to be connected to the redundant bus lines. It is also possible to connect all nodes to all bus channels to enable redundancy for all nodes in the network. 
 
 ```mermaid
 classDiagram
@@ -88,7 +72,7 @@ classDiagram
     }
 ```
 ### Redundancy example 1
-Example wiring of 2 bus redunancy with all notes attached to both busses is shown below.
+Example wiring of 2 bus redundancy with all notes attached to both buses is shown below.
 ![2 bus redundancy](/images/redunancy1.png 
  "2 bus redundancy")
 
@@ -104,7 +88,7 @@ DroneCAN nodes supports 2 types of communication:
 ### DroneCAN Data Structures
 Each communication method has its own types of pre-defined data structures, each with their own "Data Type ID" or (DTID). The standard includes its own DTID's which are suggested for most use cases, but custom types can be produced by each vendor. The message and service data structures are defined by the [The Data Structure Description Language (DSDL)](https://dronecan.github.io/Specification/3._Data_structure_description_language). The DSDL  generates the message serialisation and deserialisation code optimised for each target platform and programming language (e.g., C or Python).
 
-The DSDL also includes various standard high-level functions such as firmware update, time synchonisation, network discovery and node health monitoring ([for more information see here](https://dronecan.github.io/Specification/6._Application_level_functions/)).
+The DSDL also includes various standard high-level functions such as firmware update, time synchronisation, network discovery and node health monitoring ([for more information see here](https://dronecan.github.io/Specification/6._Application_level_functions/)).
 
 These serialised messages are then sent through the [CAN transport layer](https://dronecan.github.io/Specification/4._CAN_bus_transport_layer/) which automatically handles splitting larger messages into multiple frames.
 
@@ -155,8 +139,6 @@ The DroneCAN DSDL (Data Structure Description Language) is a language used to de
 #### File hierarchy
 DSDL definition files specify a single data structure for message broadcasting or a pair of structures for service invocation data exchange. The namespace hierarchy corresponds directly to the file-system directory structure.
 
-
-
 - Service data structure: Since a service invocation consists of two network exchange operations, the DSDL definition for a service must define two structures: Request part and Response part.
 - Syntax: A data structure definition is comprised of attributes and directives. Attribute types include Field (modifiable variables) and Constant (immutable values). Directive types are statements that provide instructions to the DSDL compiler.
 - Attribute definition: Field definition patterns involve cast_mode, field_type, and field_name. Constant definition patterns involve cast_mode, constant_type, constant_name, and constant_initializer.
@@ -196,7 +178,6 @@ sudo pip3 install git+https://github.com/DroneCAN/gui_tool@master
 ```
 ^^ Tested working on Ubuntu Parallels ARM64 29/03/23 SW
 
-
 > ### DroneCAN GUI tool MacOS instructions (FAILED ON M1 IGNORE)
 > 1. Download and install homebrew from https://brew.sh 
 > 2. Execute the following commands:
@@ -207,3 +188,4 @@ sudo pip3 install git+https://github.com/DroneCAN/gui_tool@master
 >    arch -arm64 pip3 install git+https://github.com/DroneCAN/gui_tool@master
 >    dronecan_gui_tool
 >```
+
